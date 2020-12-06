@@ -1,0 +1,145 @@
+---
+layout: default
+---
+
+{% comment %}
+
+The following license applies only to the contents of this file.
+
+The MIT License (MIT)
+
+Copyright (c) 2016-present Parker Moore and the minima contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+{% endcomment %}
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+	<header class="post-header">
+		<h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+		<p class="post-meta">
+			<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+				{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+				{{ page.date | date: date_format }}
+			</time>
+			{%- if page.author -%}
+				• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+			{%- endif -%}</p>
+	</header>
+
+	<div class="post-content e-content" itemprop="articleBody">
+		{{ content }}
+	</div>
+
+	{%- if page.github_issue_id -%}
+		<hr>
+		<div class="post-comments">
+			<h1 class="title">Comments</h1>
+			<p>Join the discussion by leaving a comment on this <a href="https://github.com/CheesePie13/CheesePie13.github.io/issues/{{page.github_issue_id}}">GitHub Issue</a>.</p>
+			<div id="comments">
+				<template id="comment-template">
+					<div class="comment">
+						<div class="header">
+							<div class="user">
+								<span class="username"></span> • <span class="date"></span>
+							</div>
+							<a class="github-link">View on GitHub</a>
+						</div>
+						<p class="body"></p>
+					</div>
+				</template>
+			</div>
+
+			<script>
+				function highlightComment(id) {
+					let commentElement = document.querySelector(id);
+					if (commentElement == null) {
+						return;
+					}
+
+					commentElement.scrollIntoView();
+
+					if (commentElement.classList.contains("highlight-fade")) {
+						commentElement.classList.remove("highlight-fade");
+						void commentElement.offsetWidth; // Need this or else animation won't restart
+						commentElement.classList.add("highlight-fade");
+					} else {
+						commentElement.classList.add("highlight-fade");
+					}
+				}
+
+				function removeHtml(s) {
+					let div = document.createElement("div");
+					div.textContent = s;
+					return div.innerHTML;
+				}
+
+				let request = new Request("https://api.github.com/repos/CheesePie13/CheesePie13.github.io/issues/{{page.github_issue_id}}/comments");
+				fetch(request)
+					.then(response => response.json())
+					.then(comments => {
+						let commentContainerElement = document.querySelector("#comments");
+						let commentTemplate = document.querySelector("#comment-template");
+						comments.forEach(comment => {
+							let copyFragment = document.importNode(commentTemplate.content, true);
+							let commentElement = copyFragment.querySelector(".comment");
+							commentElement.setAttribute("id", "issuecomment-" + comment.id);
+
+							let usernameElement = commentElement.querySelector(".username");
+							if (comment.author_association === "OWNER") {
+								usernameElement.classList.add("owner");
+								usernameElement.innerText = "Matt Gibson";
+							} else {
+								usernameElement.innerText = comment.user.login;
+							}
+
+							let dateElement = commentElement.querySelector(".date");
+							dateElement.innerText = new Date(comment.created_at)
+									.toLocaleDateString(undefined, {dateStyle: "medium"});
+							
+							let githubLinkElement = commentElement.querySelector(".github-link");
+							githubLinkElement.setAttribute("href", comment.html_url);
+
+							let bodyElement = commentElement.querySelector(".body");
+							let commentText = removeHtml(comment.body);
+							
+							// Replace issue references
+							commentText = commentText.replace(
+								/https:\/\/github\.com\/CheesePie13\/CheesePie13\.github\.io\/issues\/{{page.github_issue_id}}(#issuecomment-[0-9]*)/g, 
+								"<a href=\"$1\" onclick=\"highlightComment(\'$1\')\">(comment)</a>"
+							);
+
+							// Replace image references
+							commentText = commentText.replace(
+								/!\[(.*)\]\((.*)\)/g, 
+								"<img src=\"$2\" alt=\"$1\">"
+							);
+							
+							bodyElement.innerHTML = commentText;
+							
+							commentContainerElement.appendChild(copyFragment);
+						});
+					})
+			</script>
+		</div>
+	{%- endif -%}
+
+	<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

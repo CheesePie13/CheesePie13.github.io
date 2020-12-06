@@ -1,0 +1,17 @@
+{% assign post = include.post %}
+<li class="post-list-item">
+	<h3 class="post-title">
+		<a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+	</h3>
+	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+	<div class="post-meta">{{ post.date | date: date_format }}</div>
+	{%- if post.image -%}
+		<img class="post-image" src="{{ post.image }}">
+	{%- endif -%}
+	{%- if site.show_excerpts and post.excerpt -%}
+		<div class="post-excerpt">
+			{{ post.excerpt }}
+			<a href="{{ post.url | relative_url }}">Read more...</a>
+		</div>
+	{%- endif -%}
+</li>

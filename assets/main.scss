@@ -1,0 +1,95 @@
+---
+---
+
+@import "minima";
+
+blockquote {
+	font-style: normal;
+}
+
+.home-content {
+	margin-bottom: $spacing-unit * 2;
+}
+
+.post-content {
+	h2 {
+		@include relative-font-size(2);
+		margin-top: $spacing-unit * 1;
+		font-weight: 600;
+	}
+
+	h3 {
+		@include relative-font-size(1.75);
+	}
+}
+
+.post-list-item {
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+	padding: $spacing-unit / 2;
+	.post-title {
+		margin-bottom: $spacing-unit / 4;
+	}
+	.post-meta {
+		margin-bottom: $spacing-unit / 2;
+	}
+	.post-image {
+		margin-bottom: $spacing-unit / 4;
+		max-width: 300px;
+		max-height: 300px;
+		object-fit: contain;
+	}
+	.post-excerpt {
+		font-size: $small-font-size;
+	}
+}
+
+.post-list-view-more {
+	text-align: center;
+}
+
+.post-comments {
+	margin-top: $spacing-unit;
+	.comment {
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+		padding: $spacing-unit / 2;
+		margin-bottom: $spacing-unit / 2;
+
+		.header {
+			overflow: hidden
+		}
+		
+		.user {
+			float: left;
+			.username {
+				font-weight: bold;
+			}
+			.username.owner {
+				color: darkblue;
+			}
+		}
+
+		.github-link {
+			float: right;
+			font-size: small;
+		}
+
+		.body {
+			margin-top: $spacing-unit / 4;
+			margin-bottom: 0;
+			clear: both;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.highlight-fade {
+		animation: highlight-fade 3s 1;
+	}
+
+	@keyframes highlight-fade {
+		0% { background-color: rgb(200, 200, 200); }
+		100% { background-color: initial; }
+	}
+}
