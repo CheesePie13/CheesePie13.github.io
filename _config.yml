@@ -14,16 +14,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Matt Gibson
-email: contact@mattgibson.dev
-description: Game Developer
-#description: >- # this means to ignore newlines until "baseurl:"
-#  Just a game developer trying to make some cool games.
+description: My game development blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mattgibson.dev" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: MattGibsonDev
 github_username: CheesePie13
 show_excerpts: true
 logo: /assets/favicon-32x32.png
+
+author:
+  name: Matt Gibson
+  email: contact@mattgibson.dev
 
 # Permalink
 collections:
