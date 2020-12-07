@@ -10,7 +10,7 @@ github_issue_id: 2
 assets_folder: /assets/2020-12-06-unity-input-action-asset
 ---
 
-Unity now has a much better system for handling player input with the introduction of the Input System package. This package includes much improved management of input controls and bindings, and that's done through an Input Actions Assets. This post goes over how to create one, how they work and why you should even use one.
+Unity now has a much better system for handling player input with the introduction of the Input System package. This package includes much improved management of input controls and bindings, and that's done through an Input Actions Assets. This post goes over how to create one and how they work.
 
 ## Quick Overview
 > Here's a quick overview of the whole system if that's what your looking for. Otherwise feel free to jump down to the detailed explanation bellow this section.
