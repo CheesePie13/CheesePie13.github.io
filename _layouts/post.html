@@ -42,6 +42,9 @@ THE SOFTWARE.
 			{%- if page.author -%}
 				• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
 			{%- endif -%}</p>
+			{%- for tag in page.tags -%}
+				{%- include tag-label.html tag=tag -%}
+			{%- endfor -%}
 	</header>
 
 	<div class="post-content e-content" itemprop="articleBody">

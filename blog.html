@@ -1,0 +1,52 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+<h3 id="tags-title"></h2>
+<ul class="post-list">
+	{% assign blog_posts = site.posts | where_exp:"post", "post.categories contains 'blog'" %}
+	{% for post in blog_posts %}
+		{% include post-list-item.html post=post %}
+	{% endfor %}
+</ul>
+
+<script>
+	let searchParams = new URLSearchParams(window.location.search);
+	let capitalizedSearchTags = searchParams.getAll("tag");
+	let searchTags = capitalizedSearchTags.map(tag => tag.toLowerCase());
+
+	let posts = document.querySelectorAll(".post-list-item");
+	posts.forEach(post => {
+		let tags = post.getAttribute("data-post-tags").split(" ").map(tag => tag.toLowerCase());
+		let includesTags = searchTags.every(searchTag => tags.includes(searchTag));
+		if (includesTags) {
+			post.removeAttribute("hidden");
+		} else {
+			post.setAttribute("hidden", true);
+		}
+	});
+
+	let tagsTitle = document.querySelector("#tags-title");
+	if (capitalizedSearchTags.length === 1) {
+		tagsTitle.append("Search Tag: ");
+	} else if (capitalizedSearchTags.length > 1) {
+		tagsTitle.append("Search Tags: ");
+	}
+
+	capitalizedSearchTags.forEach(tag => {
+		let span = document.createElement("span");
+		span.classList.add("tag-label");
+		span.innerText = tag;
+		tagsTitle.appendChild(span);
+		tagsTitle.append(" ");
+	})
+
+	if (searchParams.has("asc")) {
+		let postListNode = document.querySelector(".post-list");
+		for (var i = 1; i < postListNode.childNodes.length; i++){
+			postListNode.insertBefore(postListNode.childNodes[i], postListNode.firstChild);
+		}
+	}
+</script>

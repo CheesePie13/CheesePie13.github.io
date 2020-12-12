@@ -1,11 +1,11 @@
 ---
 layout: post
 slug: breakout-cpp-part1
-title: "Making Breakout With Data-Oriented Design (Part 1)"
+title: "Making Breakout with Data-Oriented Design (Part 1)"
 image: /assets/2020-12-12-breakout-cpp-part1/main.png 
 date: 2020-12-12 12:00:00 -0500
 author: Matt Gibson
-tags: BreakoutC++ C++ DataOrientedDesign
+tags: BreakoutCpp Cpp DataOrientedDesign
 github_issue_id: 3
 assets_folder: /assets/2020-12-12-breakout-cpp-part1
 ---

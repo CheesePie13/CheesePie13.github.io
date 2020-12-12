@@ -23,6 +23,32 @@ blockquote {
 	}
 }
 
+.tag-label {
+	background-color: #639ae2;
+	display: inline;
+	padding: .15em .6em .3em;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	border-radius: .25em;
+}
+
+a:link.tag-label {
+	color: #fff;
+}
+
+a:visited.tag-label {
+	color: #fff;
+}
+
+#tags-title {
+	margin-bottom: $spacing-unit;
+}
+
 .post-list-item {
 	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
 	padding: $spacing-unit / 2;
