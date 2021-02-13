@@ -60,7 +60,7 @@ for (int i = 0; i < 5; i++) {
 
 ## The Tests
 I've broken up the tests in to multiple blog posts, I'll eventually link to them all here:
-- Class Methods (Coming Soon)
+- [Class Methods](/blog/csharp-delegates-memory-class-methods)
 - Static Methods (Coming Soon)
 - Lambdas (Coming Soon)
 - Local Functions (Coming Soon)
