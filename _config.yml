@@ -21,6 +21,8 @@ linkedin_username: MattGibsonDev
 github_username: CheesePie13
 show_excerpts: true
 logo: /assets/favicon-32x32.png
+excerpt_separator: <!--more-->
+exclude: ["wsl_develop.sh"]
 
 author:
   name: Matt Gibson
@@ -33,7 +35,7 @@ collections:
     permalink: /:categories/:slug
 
 # Build settings
-markdown: kramdown
+markdown: CommonMarkGhPages
 theme: minima
 plugins:
   - jekyll-feed

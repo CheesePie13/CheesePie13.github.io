@@ -12,6 +12,8 @@ assets_folder: /assets/2020-12-12-breakout-cpp-part1
 
 Part 1 in a series about re-creating the game breakout in C++ using data oriented design. In this episode, I talk about the reason for starting the project and the rules for implementing it.
 
+<!--more-->
+
 ![Input Action Asset]({{ page.assets_folder }}/main.png)
 
 ## But Why?

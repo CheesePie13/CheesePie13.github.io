@@ -12,6 +12,8 @@ assets_folder: /assets/2020-12-20-breakout-cpp-part2
 
 Part 2 in a series about re-creating the game breakout in C++ using data oriented design. In this episode, I talk about how I set up the project to build for multiple platforms.
 
+<!--more-->
+
 ![Input Action Asset]({{ page.assets_folder }}/main.png)
 
 ## How did it go?
