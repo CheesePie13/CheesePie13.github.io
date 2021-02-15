@@ -158,4 +158,4 @@ public class Test {
 }
 ```
 
-Now you should have an understanding of how memory is allocated for a delegate that uses a class method. If you have any questions or comments please leave them below. In my next post I'll be testing how memory is allocated for a static method. See you then!
+Now you should have an understanding of how memory is allocated for a delegate that uses a class method. If you have any questions or comments please leave them below. In my next post I'll be testing how memory is allocated for a static method. You can check it out [here](/blog/csharp-delegates-memory-static-methods).
