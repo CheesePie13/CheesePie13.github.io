@@ -220,4 +220,4 @@ You can see in the IL Pseudo Code that a new `Func` delegate is created only onc
 ## Conclusion
 The lesson we can take away from this is that when using a delegate from a static method the compiler will not make the optimization for us. This is fine if we use a static method once to subscribe to an event or as a callback, but if we use it 2 or more times you can save on memory by caching the delegate for the static method in a static variable.
 
-Thanks for reading this post! I was a bit surprised myself to learn that this optimization wasn't made automatically, especially now knowing how lambda delegates work. I'll be talking about those lambdas in my next post, so see you then!
+Thanks for reading this post! I was a bit surprised myself to learn that this optimization wasn't made automatically, especially now knowing how lambda delegates work. I'll be talking about those lambdas in my [next post](/blog/csharp-delegates-memory-lambdas), so see you there!
