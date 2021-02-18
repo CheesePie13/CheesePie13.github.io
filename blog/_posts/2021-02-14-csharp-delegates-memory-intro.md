@@ -63,7 +63,7 @@ I've broken up the tests in to multiple blog posts, I'll eventually link to them
 - [Class Methods](/blog/csharp-delegates-memory-class-methods)
 - [Static Methods](/blog/csharp-delegates-memory-static-methods)
 - [Lambdas](/blog/csharp-delegates-memory-lambdas)
-- Local Functions (Coming Soon)
+- [Local Functions](/blog/csharp-delegates-memory-local-functions)
 - Summary (Coming Soon)
 
 If you got any questions or found any mistakes in these blog posts please comment them down below!

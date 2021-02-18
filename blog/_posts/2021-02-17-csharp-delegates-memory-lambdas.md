@@ -389,4 +389,4 @@ One of the reasons I set out to do these comparisons in the first place was that
 
 It's also good to know that using a lambda instead of a static method can decrease memory usage if it is used multiple times. You can get less memory allocations by manually caching a static method delegate, but by default lambdas win when used multiple times. (That extra unneeded closure allocation is annoying though).
 
-Hope that was interesting to you, it sure was for me. I'll see you in my next post on local functions, that will be my last test case before the summary post wrapping up all the information I learned from these tests. See you then!
+Hope that was interesting to you, it sure was for me. I'll see you in my [next post on local functions](/blog/csharp-delegates-memory-local-functions), that will be my last test case before the summary post wrapping up all the information I learned from these tests. See you there!
