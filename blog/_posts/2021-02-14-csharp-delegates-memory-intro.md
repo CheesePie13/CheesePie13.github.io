@@ -12,6 +12,8 @@ Knowing how memory is managed under the hood is really important for writing hig
 
 <!--more-->
 
+If you would like to skip all the testing and analysis, and just want to know the results of the tests you can skip to the [summary post](csharp-delegates-memory-summary).
+
 ## What is a delegate?
 If you haven't used delegates before you can read about how they are used [here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/). A delegate can basically be thought of as a class that holds two main pieces of data: A function pointer and a target object. You can get the function pointer indirectly by using the `Delegate.Method` property and can get the target object by using the `Delegate.Target` property. The delegate class also has other properties for Multicast Delegates but they aren't relevant to the memory tests I'll be doing.
 
@@ -64,6 +66,6 @@ I've broken up the tests in to multiple blog posts, I'll eventually link to them
 - [Static Methods](/blog/csharp-delegates-memory-static-methods)
 - [Lambdas](/blog/csharp-delegates-memory-lambdas)
 - [Local Functions](/blog/csharp-delegates-memory-local-functions)
-- Summary (Coming Soon)
+- [Summary](/blog/csharp-delegates-memory-summary)
 
 If you got any questions or found any mistakes in these blog posts please comment them down below!

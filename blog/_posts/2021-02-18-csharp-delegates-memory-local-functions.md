@@ -382,4 +382,4 @@ As you can see, like the lambda case the closure instance is created once. Howev
 ## Conclusion
 The main take away here is that local functions behave the same as lambdas except in the case that they make no external references. In that case only the lambdas make the optimization of caching the delegates, the local function only caches the closure object. This is very interesting and I can't see a reason for it. Local functions seem pretty similar to lambdas except for the fact that they can reference themselves inside the body. Maybe there is something about that that makes the optimization harder to implement, or maybe it was just an oversight? It would probably take a look into the compiler's source code to find out, might be a good idea for another blog post 🤔
 
-Anyways thanks for reading, I'll see you in my next and last post of this series that will summarize all the learnings I got from doing these tests!
+Anyways thanks for reading, I'll see you in my next and last post of this series that will summarize all the learnings I got from doing these tests! You can check that out [here](/blog/csharp-delegates-memory-summary).
