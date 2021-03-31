@@ -23,7 +23,6 @@ show_excerpts: true
 logo: /assets/favicon-32x32.png
 excerpt_separator: <!--more-->
 exclude: ["wsl_develop.sh"]
-google_analytics: G-K5WHW7X8M0
 
 author:
   name: Matt Gibson
