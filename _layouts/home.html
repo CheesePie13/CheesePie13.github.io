@@ -40,10 +40,16 @@ THE SOFTWARE.
 		{{ content }}
 	</div>
 
-	{% comment %}
-		@todo: Add featured games section once I have some games up 
-		<h2 class="post-list-heading">Featured Games</h2>
-	{% endcomment %}
+	{% assign project_posts = site.posts | where_exp:"post", "post.categories contains 'projects'" %}
+	{%- if project_posts.size > 0 -%}
+		<h2 class="post-list-heading">Featured Projects</h2>
+		<ul class="post-list">
+		{%- for post in project_posts limit:3 -%}
+			{% include project-post-list-item.html post=post %}
+		{%- endfor -%}
+		</ul>
+	{%- endif -%}
+
 
 	{% assign blog_posts = site.posts | where_exp:"post", "post.categories contains 'blog'" %}
 	{%- if blog_posts.size > 0 -%}
