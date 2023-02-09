@@ -1,7 +1,7 @@
 ---
 layout: post
 slug: island-mini-putt
-title: "Island Mini Putt (Version 0.1)"
+title: "Island Mini Putt (Prototype)"
 image: /assets/island-mini-putt/main.png
 date: 2021-04-16 12:00:00 -0500
 author: Matt Gibson
@@ -9,7 +9,7 @@ tags:
 assets_folder: 
 ---
 
-A mini golf game in early development that I've been working on in my spare time. It runs in Unity and the art is created using MagicaVoxel and Blender.
+A prototype for a mini golf game. It runs in Unity and the art is created using MagicaVoxel and Blender.
 
 <!--more-->
 
@@ -25,7 +25,7 @@ This is a very early version of the game, these are the features that have been 
 - A basic menu system
 
 ### Future Improvements
-For the 1.0 release I'm hoping to add the following features and improvements:
+For a 1.0 release I would want to add the following features and improvements:
 - Full 18 hole course and a hard version of the course
 - Regular play mode with scorecard
 - Transition animations between holes
