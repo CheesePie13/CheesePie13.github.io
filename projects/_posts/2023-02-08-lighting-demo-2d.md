@@ -21,11 +21,12 @@ assets_folder:
 
 <h1 style="text-align: center;">Click and drag above to manually control the light!</h1>
 
-### Demo Details
-- Written in rust and can be built to the following targets:
-	- Windows (and probably Mac/Linux) using GLFW and OpenGL for rendering
+### Implementation Details
+- Written in Rust and can be built for the following platforms:
+	- Windows using GLFW and OpenGL for rendering (Mac/Linux hasn't been tested)
 	- WebAssembly using WebGL2 for rendering (this is the version running above)
-- Rendering steps:
+- The light rendering process involves three main steps:
 	1. A texture with the SDF data for the entire scene is created using the position and sizes of the shapes
 	2. Using raymarching and the SDF texture, a path is traced from the light source to each pixel to see if the light ray is unobstructed
-	3. The light intensity of the pixel is calculating using the inverse square of the distance (with an additional linear falloff so that the light doesn't extend infinitely)
+	3. The light intensity of the pixel is calculated using the inverse square of the distance to the light (an additional linear falloff is added so that the light doesn't extend infinitely)
+- The text and buttons are rendered using my immediate mode GUI library, which is still in early development
