@@ -49,35 +49,37 @@
 			canvas.style.height = window.innerHeight + "px";
 		});
 
-
-		function toggleFullScreen() {
-			if (!document.fullscreenElement) {
-				document.documentElement.requestFullscreen();
-			} else if (document.exitFullscreen) {
-				document.exitFullscreen();
-			}
-		}
-
 		document.addEventListener(
 			"keydown",
-			(e) => {
-				if (e.key === "Enter") {
-				toggleFullScreen();
+			(event) => {
+				if (event.key === "Enter") {
+					if (!document.fullscreenElement) {
+						document.documentElement.requestFullscreen();
+					} else if (document.exitFullscreen) {
+						document.exitFullscreen();
+					}
 				}
 			},
 			false,
 		);
 
-		toggleFullScreen();
+		// Prevent screen from dimming or sleeping while playing
+		if ('wakeLock' in navigator) {
+			const onVisibilityChange = async () => {
+				try {
+					const wakeLock = await navigator.wakeLock.request("screen");
+				} catch (err) {
+					console.error(`${err.name}, ${err.message}`);
+				}
+			};
 
-		window.addEventListener("load",function() {
-			// Set a timeout...
-			setTimeout(function(){
-				// Hide the address bar!
-				window.scrollTo(0, 1);
-			}, 0);
-		});
-
+			document.addEventListener('visibilitychange', async () => {
+				if (document.visibilityState !== "visible") return;
+				setTimeout(onVisibilityChange, 1);
+			});
+			
+			setTimeout(onVisibilityChange, 1);
+		}
 
 	</script>
 	<script async type="text/javascript" src="assets/gravity-grid/game.js"></script>
