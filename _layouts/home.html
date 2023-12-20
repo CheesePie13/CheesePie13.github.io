@@ -51,6 +51,7 @@ THE SOFTWARE.
 	{%- endif -%}
 
 
+{% comment %}
 	{% assign blog_posts = site.posts | where_exp:"post", "post.categories contains 'blog'" %}
 	{%- if blog_posts.size > 0 -%}
 		<h2 class="post-list-heading">Recent Blog Posts</h2>
@@ -62,6 +63,7 @@ THE SOFTWARE.
 
 		<p class="post-list-view-more"><a href="/blog">View more blog posts...</a></p>
 	{%- endif -%}
+{% endcomment %}
 
 	{% comment %}
 		@todo: Move to blog page 
