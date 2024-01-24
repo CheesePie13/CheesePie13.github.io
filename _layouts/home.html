@@ -55,7 +55,7 @@ THE SOFTWARE.
 	{%- if blog_posts.size > 0 -%}
 		<h2 class="post-list-heading">Recent Blog Posts</h2>
 		<ul class="post-list">
-		{%- for post in blog_posts limit:1 -%}
+		{%- for post in blog_posts limit:2 -%}
 			{% include post-list-item.html post=post %}
 		{%- endfor -%}
 		</ul>
