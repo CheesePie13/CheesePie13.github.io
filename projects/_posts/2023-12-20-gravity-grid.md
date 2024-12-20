@@ -20,6 +20,6 @@ A minimalistic puzzle game about blocks and gravity.
 ### Details
 - 60 levels (about 1-2 hours to complete)
 - Written in C++ (compiled to WebAssembly)
-- Dependencies
+- Built with a custom engine and using the following dependencies:
 	- Web: FreeType and Emscripten
 	- Desktop: FreeType, GLFW and Glad

@@ -44,7 +44,7 @@ THE SOFTWARE.
 	{%- if project_posts.size > 0 -%}
 		<h2 class="post-list-heading">Featured Projects</h2>
 		<ul class="post-list">
-		{%- for post in project_posts limit:4 -%}
+		{%- for post in project_posts limit:5 -%}
 			{% include project-post-list-item.html post=post %}
 		{%- endfor -%}
 		</ul>
