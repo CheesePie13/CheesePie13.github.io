@@ -13,9 +13,9 @@ A minimalistic puzzle game about blocks and gravity.
 
 <!--more-->
 
-<a href="/gravitygrid.html" target="_blank"><img src="/assets/gravity-grid/main.png"></img></a>
+<a href="/gravitygrid" target="_blank"><img src="/assets/gravity-grid/main.png"></img></a>
 
-<h1 style="text-align: center;"><a href="/gravitygrid.html" target="_blank">Click Here to Play!</a></h1>
+<h1 style="text-align: center;"><a href="/gravitygrid" target="_blank">Click Here to Play!</a></h1>
 
 ### Details
 - 60 levels (about 1-2 hours to complete)

@@ -13,9 +13,9 @@ A minecart track building puzzle game.
 
 <!--more-->
 
-<a href="/mindcarts.html" target="_blank"><img src="/assets/mind-carts/main.png"></img></a>
+<a href="/mindcarts" target="_blank"><img src="/assets/mind-carts/main.png"></img></a>
 
-<h1 style="text-align: center;"><a href="/mindcarts.html" target="_blank">Click Here to Play!</a></h1>
+<h1 style="text-align: center;"><a href="/mindcarts" target="_blank">Click Here to Play!</a></h1>
 
 ### Details
 - 120 levels
