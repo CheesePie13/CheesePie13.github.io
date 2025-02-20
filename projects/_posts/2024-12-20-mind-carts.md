@@ -18,7 +18,7 @@ A minecart track building puzzle game.
 <h1 style="text-align: center;"><a href="/mindcarts" target="_blank">Click Here to Play!</a></h1>
 
 ### Details
-- 120 levels
+- 120 levels (104 Normal + 16 Hard)
 - Written in C++ (compiled to WebAssembly)
 - Built with a custom engine and using the following dependencies:
 	- Web: FreeType and Emscripten
