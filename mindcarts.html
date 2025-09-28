@@ -26,9 +26,6 @@
 </head>
 
 <body>
-	<script data-goatcounter="https://cheesepie1313.goatcounter.com/count"
-		async src="//gc.zgo.at/count.js"></script>
-
 	<canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 style="touch-action:none"></canvas>
 
 	<script type='text/javascript'>
@@ -78,14 +75,22 @@
 			false,
 		);
 
-		var onLevelComplete = (level) => {
+		var onNormalLevelComplete = (level) => {
 			if (window.goatcounter == null) return;
 			window.goatcounter.count({
-				path: 'Event-MindCarts-LevelComplete-' + level,
+				path: 'Event-MindCarts-NormalLevelComplete-' + level,
 				event: true,
 			});
 		};
-		
+
+		var onHardLevelComplete = (level) => {
+			if (window.goatcounter == null) return;
+			window.goatcounter.count({
+				path: 'Event-MindCarts-HardLevelComplete-' + level,
+				event: true,
+			});
+		};
+
 		var onStoryComplete = (level) => {
 			if (window.goatcounter == null) return;
 			window.goatcounter.count({
@@ -114,6 +119,9 @@
 
 	</script>
 	<script async type="text/javascript" src="assets/mind-carts/game.js"></script>
+
+	<script data-goatcounter="https://cheesepie1313.goatcounter.com/count"
+		async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>

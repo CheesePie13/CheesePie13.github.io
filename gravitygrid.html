@@ -74,6 +74,14 @@
 			false,
 		);
 
+		var onLevelComplete = (level) => {
+			if (window.goatcounter == null) return;
+			window.goatcounter.count({
+				path: 'Event-GravityGrid-LevelComplete-' + level,
+				event: true,
+			});
+		};
+
 		// Prevent screen from dimming or sleeping while playing
 		if ('wakeLock' in navigator) {
 			const onVisibilityChange = async () => {
@@ -94,6 +102,9 @@
 
 	</script>
 	<script async type="text/javascript" src="assets/gravity-grid/game.js"></script>
+	
+	<script data-goatcounter="https://cheesepie1313.goatcounter.com/count"
+		async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>
