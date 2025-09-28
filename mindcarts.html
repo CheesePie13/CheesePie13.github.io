@@ -78,7 +78,7 @@
 		var onNormalLevelComplete = (level) => {
 			if (window.goatcounter == null) return;
 			window.goatcounter.count({
-				path: 'Event-MindCarts-NormalLevelComplete-' + level,
+				path: 'MindCarts-NLevelComplete-' + level,
 				event: true,
 			});
 		};
@@ -86,7 +86,7 @@
 		var onHardLevelComplete = (level) => {
 			if (window.goatcounter == null) return;
 			window.goatcounter.count({
-				path: 'Event-MindCarts-HardLevelComplete-' + level,
+				path: 'MindCarts-HLevelComplete-' + level,
 				event: true,
 			});
 		};
@@ -94,7 +94,7 @@
 		var onStoryComplete = (level) => {
 			if (window.goatcounter == null) return;
 			window.goatcounter.count({
-				path: 'Event-MindCarts-StoryComplete',
+				path: 'MindCarts-StoryComplete',
 				event: true,
 			});
 		};
